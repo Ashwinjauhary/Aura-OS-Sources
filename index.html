@@ -12,6 +12,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -39,13 +44,15 @@
     <main>
         <!-- Hero Section -->
         <section id="hero" class="hero-section observer-target">
+            <!-- AI Generated Background Image -->
+            <div class="hero-bg-container">
+                <img src="hero-bg.png" alt="Abstract Futuristic Background" class="hero-bg-img" />
+                <div class="hero-bg-overlay"></div>
+            </div>
+
             <div class="hero-content">
                 <div class="icon-container glass hover-scale">
-                    <svg class="icon hero-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-                    </svg>
+                    <img src="favicon.png" alt="Aura OS Logo" class="hero-logo-img">
                 </div>
 
                 <h1 class="hero-title text-gradient">Your Portfolio.<br>Reimagined as an OS.</h1>
@@ -116,27 +123,8 @@
                     <p>Open multiple apps concurrently. Drag, minimize, maximize, and arrange your workspace exactly how
                         you want it. It's multi-tasking built for the browser.</p>
                 </div>
-                <div class="feature-visual glass">
-                    <div class="mock-window">
-                        <div class="mock-header">
-                            <div class="mock-dot red"></div>
-                            <div class="mock-dot yellow"></div>
-                            <div class="mock-dot green"></div>
-                        </div>
-                        <div class="mock-content flex-center">
-                            <span>📁 File Explorer</span>
-                        </div>
-                    </div>
-                    <div class="mock-window offset">
-                        <div class="mock-header">
-                            <div class="mock-dot red"></div>
-                            <div class="mock-dot yellow"></div>
-                            <div class="mock-dot green"></div>
-                        </div>
-                        <div class="mock-content flex-center">
-                            <span>💻 Terminal // bash</span>
-                        </div>
-                    </div>
+                <div class="feature-visual image-feature">
+                    <img src="mockup.png" alt="Aura OS UI Design Mockup" class="mockup-img shadow-glow" />
                 </div>
             </div>
 

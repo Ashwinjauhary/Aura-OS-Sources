@@ -246,10 +246,56 @@ section {
     color: white;
 }
 
-/* Hero Section */
+/* Hero Section & Backgrounds */
 .hero-section {
     text-align: center;
     min-height: 100vh;
+    position: relative;
+}
+
+.hero-bg-container {
+    position: absolute;
+    top: -6rem;
+    /* Account for padding */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    max-height: 800px;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero-bg-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.6;
+    animation: slowPulse 8s ease-in-out infinite alternate;
+}
+
+.hero-bg-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Fade the bottom of the image into the black background */
+    background: linear-gradient(to bottom, rgba(5, 5, 5, 0) 0%, rgba(5, 5, 5, 0.8) 70%, rgba(5, 5, 5, 1) 100%);
+}
+
+@keyframes slowPulse {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.05);
+        opacity: 0.7;
+    }
 }
 
 .hero-content {
@@ -259,21 +305,25 @@ section {
     align-items: center;
     gap: 2rem;
     z-index: 10;
+    position: relative;
 }
 
 .icon-container {
-    width: 5rem;
-    height: 5rem;
+    width: 6rem;
+    height: 6rem;
     border-radius: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    padding: 0.5rem;
 }
 
-.hero-icon {
-    width: 2.5rem;
-    height: 2.5rem;
-    color: #60a5fa;
+.hero-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 1rem;
 }
 
 .hero-title {
@@ -365,6 +415,27 @@ section {
     position: relative;
     padding: 2rem;
     overflow: hidden;
+}
+
+.image-feature {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+
+.mockup-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.feature-layout:hover .mockup-img {
+    transform: scale(1.02) translateY(-5px);
 }
 
 /* Mock Visual Elements */
