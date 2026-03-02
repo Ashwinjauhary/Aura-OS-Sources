@@ -1,0 +1,166 @@
+/* CSS Variables to match Aura OS Aesthetic */
+:root {
+    --bg-color: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.6);
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --card-border: rgba(255, 255, 255, 0.2);
+    
+    --primary-gradient-start: #3b82f6; /* Tailwind blue-500 */
+    --primary-gradient-end: #4f46e5;   /* Tailwind indigo-600 */
+    --primary-hover-start: #2563eb;    /* Tailwind blue-600 */
+    --primary-hover-end: #4338ca;      /* Tailwind indigo-700 */
+    
+    --icon-bg-start: #3b82f6; 
+    --icon-bg-end: #9333ea;    /* Tailwind purple-600 */
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; 
+}
+
+/* Layout Containers */
+.container {
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* Glow Effect Background */
+.bg-blur {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+    background-color: rgba(59, 130, 246, 0.2); /* blue-500/20 */
+    border-radius: 50%;
+    filter: blur(64px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Card Styling (Glassmorphism) */
+.card {
+    max-width: 28rem; /* max-w-md */
+    width: 100%;
+    background-color: var(--card-bg);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border: 1px solid var(--card-border);
+    border-radius: 1.5rem; /* 3xl */
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    position: relative;
+    text-align: center;
+    opacity: 0; /* Handled by JS animation */
+    transform: scale(0.95); /* Handled by JS animation */
+}
+
+/* Content Layout inside Card */
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Top Icon */
+.icon-container {
+    width: 6rem;
+    height: 6rem;
+    margin: 0 auto;
+    background: linear-gradient(to bottom right, var(--icon-bg-start), var(--icon-bg-end));
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.2);
+}
+
+.icon {
+    width: 3rem;
+    height: 3rem;
+    color: white;
+}
+
+/* Typography typography */
+.title {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700;
+    background: linear-gradient(to right, #60a5fa, #a855f7); /* blue-400 to purple-500 */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-top: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+/* Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--primary-gradient-start), var(--primary-gradient-end));
+    color: white;
+    box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(to right, var(--primary-hover-start), var(--primary-hover-end));
+}
+
+.btn-secondary {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
