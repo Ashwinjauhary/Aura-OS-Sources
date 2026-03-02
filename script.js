@@ -9,3 +9,21 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transform = 'scale(1)';
     });
 });
+
+// Modal Logic
+function showIosInstructions() {
+    const modal = document.getElementById('ios-modal');
+    modal.classList.remove('hidden');
+}
+
+function hideIosInstructions() {
+    const modal = document.getElementById('ios-modal');
+    modal.classList.add('hidden');
+}
+
+// Close modal if clicked outside the card
+document.getElementById('ios-modal').addEventListener('click', (e) => {
+    if (e.target.id === 'ios-modal') {
+        hideIosInstructions();
+    }
+});

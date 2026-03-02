@@ -5,14 +5,19 @@
     --text-secondary: rgba(255, 255, 255, 0.6);
     --card-bg: rgba(255, 255, 255, 0.1);
     --card-border: rgba(255, 255, 255, 0.2);
-    
-    --primary-gradient-start: #3b82f6; /* Tailwind blue-500 */
-    --primary-gradient-end: #4f46e5;   /* Tailwind indigo-600 */
-    --primary-hover-start: #2563eb;    /* Tailwind blue-600 */
-    --primary-hover-end: #4338ca;      /* Tailwind indigo-700 */
-    
-    --icon-bg-start: #3b82f6; 
-    --icon-bg-end: #9333ea;    /* Tailwind purple-600 */
+
+    --primary-gradient-start: #3b82f6;
+    /* Tailwind blue-500 */
+    --primary-gradient-end: #4f46e5;
+    /* Tailwind indigo-600 */
+    --primary-hover-start: #2563eb;
+    /* Tailwind blue-600 */
+    --primary-hover-end: #4338ca;
+    /* Tailwind indigo-700 */
+
+    --icon-bg-start: #3b82f6;
+    --icon-bg-end: #9333ea;
+    /* Tailwind purple-600 */
 }
 
 /* Reset and Base Styles */
@@ -31,7 +36,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden; 
+    overflow: hidden;
 }
 
 /* Layout Containers */
@@ -52,7 +57,8 @@ body {
     transform: translate(-50%, -50%);
     width: 200px;
     height: 200px;
-    background-color: rgba(59, 130, 246, 0.2); /* blue-500/20 */
+    background-color: rgba(59, 130, 246, 0.2);
+    /* blue-500/20 */
     border-radius: 50%;
     filter: blur(64px);
     pointer-events: none;
@@ -61,20 +67,24 @@ body {
 
 /* Card Styling (Glassmorphism) */
 .card {
-    max-width: 28rem; /* max-w-md */
+    max-width: 28rem;
+    /* max-w-md */
     width: 100%;
     background-color: var(--card-bg);
     backdrop-filter: blur(40px);
     -webkit-backdrop-filter: blur(40px);
     border: 1px solid var(--card-border);
-    border-radius: 1.5rem; /* 3xl */
+    border-radius: 1.5rem;
+    /* 3xl */
     padding: 2rem;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     z-index: 10;
     position: relative;
     text-align: center;
-    opacity: 0; /* Handled by JS animation */
-    transform: scale(0.95); /* Handled by JS animation */
+    opacity: 0;
+    /* Handled by JS animation */
+    transform: scale(0.95);
+    /* Handled by JS animation */
 }
 
 /* Content Layout inside Card */
@@ -105,9 +115,11 @@ body {
 
 /* Typography typography */
 .title {
-    font-size: 2.25rem; /* text-4xl */
+    font-size: 2.25rem;
+    /* text-4xl */
     font-weight: 700;
-    background: linear-gradient(to right, #60a5fa, #a855f7); /* blue-400 to purple-500 */
+    background: linear-gradient(to right, #60a5fa, #a855f7);
+    /* blue-400 to purple-500 */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -163,4 +175,156 @@ body {
 
 .btn-secondary:hover {
     background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-ios {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.btn-ios:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Modal Styling */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    padding: 1rem;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-card {
+    background-color: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    max-width: 24rem;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    transform: translateY(0) scale(1);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-overlay.hidden .modal-card {
+    transform: translateY(20px) scale(0.95);
+}
+
+.close-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s;
+    padding: 0.5rem;
+}
+
+.close-btn:hover {
+    color: white;
+}
+
+.modal-icon {
+    width: 4rem;
+    height: 4rem;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(to bottom right, #3b82f6, #8b5cf6);
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-icon svg {
+    width: 2rem;
+    height: 2rem;
+    color: white;
+}
+
+.modal-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.modal-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: left;
+}
+
+.step-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border-radius: 50%;
+    font-size: 0.875rem;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+.step p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.step p strong {
+    color: white;
+    font-weight: 600;
+}
+
+.text-link {
+    color: #60a5fa;
+    text-decoration: none;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+.modal-note {
+    text-align: center;
+    color: #8b5cf6;
+    font-size: 0.875rem;
+    font-weight: 500;
+    background-color: rgba(139, 92, 246, 0.1);
+    padding: 0.75rem;
+    border-radius: 0.75rem;
 }
