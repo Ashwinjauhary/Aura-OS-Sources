@@ -592,6 +592,53 @@ footer {
 }
 
 /* Responsive Adjustments */
+/* Mobile Menu Toggle Button (Desktop Hidden) */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.mobile-menu-btn svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+/* Mobile Dropdown Menu (Default Hidden) */
+.mobile-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--card-border);
+    flex-direction: column;
+    padding: 1rem 2rem 2rem;
+    gap: 1.5rem;
+    align-items: center;
+    transform: translateY(-10px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.mobile-menu.active {
+    display: flex;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.mobile-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
 @media (max-width: 768px) {
     .feature-layout {
         grid-template-columns: 1fr;
@@ -603,16 +650,41 @@ footer {
     }
 
     section {
-        padding: 5rem 1.5rem;
+        padding: 6rem 1rem 4rem;
+        /* Adjusted for better mobile padding */
     }
 
     .hero-title {
         font-size: 2.5rem;
+        /* Better scaling for small screens */
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
     }
 
     .nav-links {
         display: none;
-        /* simple mobile nav hide for MVP */
+        /* Hide default nav */
+    }
+
+    .mobile-menu-btn {
+        display: flex;
+        /* Show hamburger icon */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cta-card {
+        padding: 2.5rem 1rem;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .mockup-img {
+        object-fit: contain;
     }
 }
 

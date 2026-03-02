@@ -28,11 +28,28 @@
                 <div class="logo-icon"></div>
                 <span>Aura OS</span>
             </div>
+
+            <!-- Desktop Links (Hidden on small screens) -->
             <div class="nav-links">
                 <a href="#about" class="nav-link">About</a>
                 <a href="#features" class="nav-link">Features</a>
                 <a href="#download" class="nav-link btn-small primary">Get Aura OS</a>
             </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="mobile-menu-btn" aria-label="Toggle Menu">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="mobile-menu hidden">
+            <a href="#about" class="mobile-link">About</a>
+            <a href="#features" class="mobile-link">Features</a>
+            <a href="#download" class="mobile-link btn-small primary">Get Aura OS</a>
         </div>
     </nav>
 
