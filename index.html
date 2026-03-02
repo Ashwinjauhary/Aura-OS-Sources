@@ -1,87 +1,239 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aura OS | Download</title>
+    <title>Aura OS | The Interactive Portfolio Experience</title>
     <meta name="description"
-        content="Download the Aura OS interactive portfolio Android APK or experience the web app.">
+        content="Dive into Aura OS, a portfolio reimagined as a fully functional operating system. Download the Android APK or experience the interactive web app natively on iOS.">
     <!-- Using Google Fonts to emulate Geist/Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <div class="container">
-        <!-- Floating Animated Background Elements -->
-        <div class="bg-blur"></div>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <div class="nav-logo">
+                <div class="logo-icon"></div>
+                <span>Aura OS</span>
+            </div>
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#download" class="nav-link btn-small primary">Get Aura OS</a>
+            </div>
+        </div>
+    </nav>
 
-        <div class="card fade-in">
-            <div class="card-content">
-                <div class="icon-container">
-                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+    <!-- Floating Background Effects -->
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+    <div class="glow-orb orb-3"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section observer-target">
+            <div class="hero-content">
+                <div class="icon-container glass hover-scale">
+                    <svg class="icon hero-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
                         xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                             d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                     </svg>
                 </div>
 
-                <h1 class="title">Aura OS</h1>
-
-                <p class="subtitle">
-                    Experience the interactive portfolio natively on your Android device or directly in your browser.
+                <h1 class="hero-title text-gradient">Your Portfolio.<br>Reimagined as an OS.</h1>
+                <p class="hero-subtitle">
+                    Step inside a fully functional simulated operating system right in your browser. Complete with
+                    windows, settings, interactive apps, and beautiful glassmorphism.
                 </p>
 
-                <div class="action-buttons">
-                    <a href="AuraOS.apk" download class="btn btn-primary">
+                <div class="hero-actions">
+                    <a href="#download" class="btn btn-primary shadow-glow hover-lift">
+                        Get Aura OS
+                    </a>
+                    <a href="https://aura-os-theta.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-secondary glass hover-lift">
+                        Launch Web Experience
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about-section observer-target stagger-children">
+            <h2 class="section-title text-gradient">What is Aura OS?</h2>
+            <div class="about-grid">
+                <div class="about-card glass hover-lift child">
+                    <div class="card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3>Interactive Resume</h3>
+                    <p>Why read a boring PDF when you can explore skills, projects, and experiences through interactive
+                        applications like a File Explorer and Terminal?</p>
+                </div>
+                <div class="about-card glass hover-lift child">
+                    <div class="card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3>Desktop Grade Feel</h3>
+                    <p>Designed to feel exactly like a modern operating system with a dock, control center, dynamic
+                        wallpapers, window management, and native system sounds.</p>
+                </div>
+                <div class="about-card glass hover-lift child">
+                    <div class="card-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3>React & Framer Motion</h3>
+                    <p>Built with cutting edge web technologies to ensure buttery smooth 60fps animations, seamless
+                        transitions, and immediate interaction response.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Showcase -->
+        <section id="features" class="features-section observer-target">
+            <div class="feature-layout left">
+                <div class="feature-text">
+                    <h2 class="text-gradient">Fluid Window Management</h2>
+                    <p>Open multiple apps concurrently. Drag, minimize, maximize, and arrange your workspace exactly how
+                        you want it. It's multi-tasking built for the browser.</p>
+                </div>
+                <div class="feature-visual glass">
+                    <div class="mock-window">
+                        <div class="mock-header">
+                            <div class="mock-dot red"></div>
+                            <div class="mock-dot yellow"></div>
+                            <div class="mock-dot green"></div>
+                        </div>
+                        <div class="mock-content flex-center">
+                            <span>📁 File Explorer</span>
+                        </div>
+                    </div>
+                    <div class="mock-window offset">
+                        <div class="mock-header">
+                            <div class="mock-dot red"></div>
+                            <div class="mock-dot yellow"></div>
+                            <div class="mock-dot green"></div>
+                        </div>
+                        <div class="mock-content flex-center">
+                            <span>💻 Terminal // bash</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="feature-layout right observer-target">
+                <div class="feature-visual glass flex-center stack-visual">
+                    <div class="mock-dock">
+                        <div class="dock-item"></div>
+                        <div class="dock-item"></div>
+                        <div class="dock-item active"></div>
+                        <div class="dock-item"></div>
+                    </div>
+                </div>
+                <div class="feature-text">
+                    <h2 class="text-gradient">Dynamic Control Center</h2>
+                    <p>Toggle Dark Mode, alter system brightness, change the aesthetic wallpaper, or silence
+                        notifications via a beautifully frosted control center that persists your preferences.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section / Final CTA -->
+        <section id="download" class="download-section observer-target">
+            <div class="card glass cta-card">
+                <h2 class="section-title text-gradient">Experience Aura OS</h2>
+                <p class="subtitle mb-8">
+                    Ready to explore? Install it natively as an Android APK, add it to your iOS Home Screen for a
+                    seamless PWA experience, or view it directly in your browser.
+                </p>
+
+                <div class="cta-actions">
+                    <a href="AuraOS.apk" download class="btn btn-primary shadow-glow hover-lift">
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                        </svg>
                         Download Android APK
                     </a>
 
-                    <button onclick="showIosInstructions()" class="btn btn-ios">
+                    <button onclick="showIosInstructions()" class="btn btn-ios hover-lift">
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                        </svg>
                         Install on iOS / iPhone
                     </button>
 
                     <a href="https://aura-os-theta.vercel.app/" target="_blank" rel="noopener noreferrer"
-                        class="btn btn-secondary">
+                        class="btn btn-secondary glass hover-lift">
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9">
+                            </path>
+                        </svg>
                         Open Web App
                     </a>
                 </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-        <!-- iOS Instructions Modal -->
-        <div id="ios-modal" class="modal-overlay hidden">
-            <div class="modal-card">
-                <button onclick="hideIosInstructions()" class="close-btn">×</button>
-                <div class="modal-icon">
-                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                    </svg>
-                </div>
-                <h2 class="modal-title">Install on iOS</h2>
-                <div class="modal-steps">
-                    <div class="step">
-                        <span class="step-num">1</span>
-                        <p>Open <strong><a href="https://aura-os-theta.vercel.app/" target="_blank"
-                                    class="text-link">aura-os-theta.vercel.app</a></strong> on your iPhone's Safari
-                            browser.</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-num">2</span>
-                        <p>Tap the <strong>Share</strong> button at the bottom of the screen (the square with an arrow
-                            pointing up).</p>
-                    </div>
-                    <div class="step">
-                        <span class="step-num">3</span>
-                        <p>Scroll down and tap <strong>"Add to Home Screen"</strong>.</p>
-                    </div>
-                </div>
-                <p class="modal-note">This will install Aura OS directly on your device just like a native app!</p>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Aura OS | Ashwin Jauhary | Built with React & Capacitor</p>
+    </footer>
+
+    <!-- iOS Instructions Modal (Unchanged structurally, just keeping it here) -->
+    <div id="ios-modal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button onclick="hideIosInstructions()" class="close-btn">×</button>
+            <div class="modal-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
             </div>
+            <h2 class="modal-title">Install on iOS</h2>
+            <div class="modal-steps">
+                <div class="step">
+                    <span class="step-num">1</span>
+                    <p>Open <strong><a href="https://aura-os-theta.vercel.app/" target="_blank"
+                                class="text-link">aura-os-theta.vercel.app</a></strong> on your iPhone's Safari browser.
+                    </p>
+                </div>
+                <div class="step">
+                    <span class="step-num">2</span>
+                    <p>Tap the <strong>Share</strong> button at the bottom of the screen (the square with an arrow
+                        pointing up).</p>
+                </div>
+                <div class="step">
+                    <span class="step-num">3</span>
+                    <p>Scroll down and tap <strong>"Add to Home Screen"</strong>.</p>
+                </div>
+            </div>
+            <p class="modal-note">This will install Aura OS directly on your device just like a native app!</p>
         </div>
     </div>
 

@@ -1,16 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Simple mock of Framer Motion's initial animation
-    const card = document.querySelector('.card');
-
-    // Trigger animation next frame to ensure CSS has applied
-    requestAnimationFrame(() => {
-        card.style.transition = 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-        card.style.opacity = '1';
-        card.style.transform = 'scale(1)';
+    // ----------------------------------------------------
+    // Navbar Scroll Effect
+    // ----------------------------------------------------
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
     });
+
+    // ----------------------------------------------------
+    // Intersection Observer for Scroll Animations
+    // ----------------------------------------------------
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15 // Trigger when 15% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                // Optional: Stop observing once it's visible so it doesn't animate out and in again
+                // observer.unobserve(entry.target); 
+            }
+        });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll('.observer-target');
+    animatedElements.forEach(el => observer.observe(el));
 });
 
-// Modal Logic
+// ----------------------------------------------------
+// iOS Modal Logic
+// ----------------------------------------------------
 function showIosInstructions() {
     const modal = document.getElementById('ios-modal');
     modal.classList.remove('hidden');
